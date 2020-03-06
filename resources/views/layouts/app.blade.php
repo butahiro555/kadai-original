@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <title>Create Template</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
     </head>
-
     <body>
-        
         @include('commons.navbar')
         
         <div class="container">

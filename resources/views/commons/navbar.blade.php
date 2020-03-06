@@ -1,6 +1,8 @@
-<header class="mb-3">
+<header class="mb-2">
     <nav class="navbar navbar-expand navbar-dark bg-dark"> 
-        <a class="navbar-brand" href="/">Create&nbsp;Template...&nbsp;<i class="fas fa-pen"></i></a>
+        <div class="ml-5 pl-5 collapse navbar-collapse justify-content-end" id="navbarNav4">
+            <a class="navbar-brand" href="/">Create&nbsp;Template...&nbsp;<i class="fas fa-pen"></i></a>
+        </div>
          
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
