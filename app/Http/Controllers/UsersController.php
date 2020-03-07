@@ -34,23 +34,23 @@ class UsersController extends Controller
         
         // Saveが押されたら、Template listsに遷移させる
         return redirect()->route('templates.show', ['id' => $id]);
+        
     }
     
-    /* 上書き保存機能(後々、実装予定)
-    public function update(Request $request)
-    {
-        $templates = Template::find($request->id);
-        
-        $templates->user_id = $request->user()->id;
+    // 上書き保存機能
+    public function update(Request $request, $id)
+    {   
+        $templates = Template::find($id);
         $templates->content = $request->content;
         $templates->save();
         
-        return redirect('/templates');
+        return redirect()->route('templates.show', ['id' => $id]);
         
-    }   */
+    }
     
     public function show($id)
     {   
+        $id = Auth::id();
         $user = User::find($id);
         
         $templates = $user->templates()->orderBy('created_at', 'desc')->paginate(3);
@@ -62,7 +62,7 @@ class UsersController extends Controller
         
         // 他のユーザーの一覧は見れないようにする
         if($user->id == Auth::id()){
-        
+            
         return view('templates.show', $data);
         
         }else {

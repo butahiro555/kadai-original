@@ -1,1 +1,37 @@
-@charset "utf-8";
+
+/* スクロールバーの有無で画面のガタつきを防ぐためのCSS */
+body {
+    overflow-y: scroll;
+}
+
+/* indexのボタンの整列 */
+.wrapper {
+margin: 10px;
+display: flex;
+justify-content:flex-end;
+}
+
+/* flexboxを使用する */
+/* 親要素 */
+.flex_test-box {
+display: flex;
+justify-content:flex-end;
+}
+
+/* 子要素 */
+.flex_test-item {
+    margin: 10px;
+}
+
+/* Updateが1,Deleteが2,Copyが3で、それを並び替える */
+.flex_test-item:nth-child(1) {
+order: 2;
+}
+
+.flex_test-item:nth-child(2) {
+order: 1;
+}
+
+.flex_test-item:nth-child(3) {
+order: 3;
+}

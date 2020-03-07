@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Create Template</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
         @include('commons.navbar')
@@ -19,15 +19,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-        
-        <!-- セーブボタンを押した後のメッセージ -->
-        <script>
-        function saveToTemplatelist()
-        {
-            // コピーをお知らせする
-            alert("Save Completed!" );
-        }
-        </script>
         
         <!-- クリップボードにコピーするためのjavascript -->
         <script>

@@ -1,23 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-            <h5 class="text-center text-primary">Template create</h5>
-        <form action="{{ url('/templates')}}" method="post">
-            {{ csrf_field() }}
-            
-            <div class="text-center">
-                @if(Auth::check())
-                <textarea id="copyTarget" type="text" name="content" cols="60" rows="20" placeholder="Type your text." required></textarea>
-                @else
-                <textarea id="copyTarget" type="text" name="content" cols="60" rows="20" placeholder="If you login on this site,
-you can use function of create and save templates!" required></textarea>
-                @endif
-            </div>
-            <div class="text-right">
-                @if(Auth::check())
-                <button onclick="saveToTemplatelist()" type="submit" class="btn btn-primary btn">Save</button>
-                @endif
-                <button onclick="copyToClipboard()" type="button" class="btn btn-info">Copy</button>
-            </div>
-        </form>
+    <h5 class="text-center text-primary">Template create</h5>
+        <div>
+            <!-- テンプレートを保存するためのフォームアクション -->
+            {!! Form::model($templatess, ['route' => 'templates.store']) !!}
+                {{ csrf_field() }}
+                
+                <!-- ログインユーザーと、非ログインユーザーのテキストエリア -->
+                <div>
+                    @if(Auth::check())
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x20', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
+                    @else
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x20', 'class' => 'form-control', 'placeholder' => 'If you login on this site, you can use function of create and save templates!', required]) !!}
+                    @endif
+                </div>
+                
+                <!-- テンプレートを保存するボタンと、クリップボードにコピーするボタン -->
+                <div class="wrapper">
+                    @if(Auth::check())
+                    <div class="mr-2">
+                        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                    </div>
+                    @endif
+                        {!! Form::button('Copy', ['onclick' => 'copyToClipboard()', 'class' => 'btn btn-info']) !!}
+                </div>
+            {!! Form::close() !!}
+        </div>
 @endsection
