@@ -12,7 +12,8 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {   
+        // 最大長未指定時のデフォルト値
         \Schema::defaultStringLength(191);
     }
 
