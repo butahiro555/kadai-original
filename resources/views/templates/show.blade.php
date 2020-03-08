@@ -18,7 +18,7 @@
                 <div class="flex_test-box">
                             <div class="flex_test-item">
                             <!-- 更新ボタン -->
-                            {!! Form::submit('Update', ['class' => 'btn btn-warning text-white']) !!}
+                            {!! Form::submit('Update', ['id' => 'warning', 'class' => 'btn btn-warning text-white']) !!}
                             </div>
                     {!! Form::close() !!}
                         
@@ -26,7 +26,7 @@
                     {!! Form::model($template, ['route' => ['templates.destroy', $template->id], 'method' => 'delete']) !!}
                         <!-- 削除ボタン-->
                             <div class="flex_test-item">
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Delete', ['id' => 'delete', 'class' => 'btn btn-danger']) !!}
                             </div>
                     {!! Form::close() !!}
                         

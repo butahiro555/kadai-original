@@ -19,11 +19,13 @@
                 <!-- テンプレートを保存するボタンと、クリップボードにコピーするボタン -->
                 <div class="wrapper">
                     @if(Auth::check())
-                    <div class="mr-2">
+                    <div class="wrapper-button">
                         {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                     </div>
                     @endif
+                    <div class="wrapper-button">
                         {!! Form::button('Copy', ['onclick' => 'copyToClipboard()', 'class' => 'btn btn-info']) !!}
+                    </div>
                 </div>
             {!! Form::close() !!}
         </div>

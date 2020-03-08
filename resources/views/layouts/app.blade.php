@@ -37,5 +37,25 @@
             alert("Copy Completed!" );
         }
         </script>
+        
+        <!-- deleteのときのメッセージ -->
+        <script>
+        $('#delete').click(function(){
+                if(!confirm('Do you really want to delete this?')){
+                    /* キャンセルの時の処理 */
+                    return false;
+                }
+            });
+        </script>
+        
+        <!-- updateのときのメッセージ -->
+        <script>
+        $('#warning').click(function(){
+                if(!confirm('Do you really want to overwrite save this?')){
+                    /* キャンセルの時の処理 */
+                    return false;
+                }
+            });
+        </script>
     </body>
 </html>
