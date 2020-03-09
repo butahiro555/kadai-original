@@ -20,6 +20,7 @@ margin: auto;
 .wrapper {
 display: flex;
 justify-content:flex-end;
+width: 90%;
 }
 
 .wrapper-button {
