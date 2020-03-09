@@ -5,6 +5,17 @@ body {
     overflow-y: scroll;
 }
 
+.title {
+width: 30%;
+margin: auto;
+margin-bottom: 20px;
+}
+
+.textarea {
+width: 80%;
+margin: auto;
+}
+
 /* indexのボタンの整列 */
 .wrapper {
 display: flex;
@@ -12,7 +23,7 @@ justify-content:flex-end;
 }
 
 .wrapper-button {
-    margin: 10px;
+margin: 10px;
 }
 
 /* flexboxを使用する */
@@ -20,11 +31,12 @@ justify-content:flex-end;
 .flex_test-box {
 display: flex;
 justify-content:flex-end;
+width: 90%;
 }
 
 /* 子要素 */
 .flex_test-item {
-    margin: 10px;
+margin: 10px;
 }
 
 /* Updateが1,Deleteが2,Copyが3で、それを並び替える */

@@ -2,19 +2,22 @@
 
 @section('content')
     <h5 class="text-center text-primary">Template create</h5>
-        <div>
             <!-- テンプレートを保存するためのフォームアクション -->
             {!! Form::model($templatess, ['route' => 'templates.store']) !!}
                 {{ csrf_field() }}
                 
                 <!-- ログインユーザーと、非ログインユーザーのテキストエリア -->
-                <div>
-                    @if(Auth::check())
-                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x20', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
-                    @else
-                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x20', 'class' => 'form-control', 'placeholder' => 'If you login on this site, you can use function of create and save templates!', required]) !!}
-                    @endif
-                </div>
+                @if(Auth::check())
+                <div class="container">
+                    <div class="title">
+                        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title', required]) !!}
+                    </div>
+                    <div class="textarea">
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x15', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
+                @else
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x15', 'class' => 'form-control', 'placeholder' => 'If you login on this site, you can use function of create and save templates!', required]) !!}
+                    </div>
+                @endif
                 
                 <!-- テンプレートを保存するボタンと、クリップボードにコピーするボタン -->
                 <div class="wrapper">
