@@ -8,12 +8,15 @@
             <div class="container">        
                 <!-- ログインユーザーと、非ログインユーザーのテキストエリア -->
                 @if(Auth::check())
+                <div class="top">
                     <div class="title">
                         {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title', required]) !!}
                     </div>
+                </div>
                     <div class="textarea">
                         {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x15', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
                     </div>
+                
                 @else
                     <div class="textarea">
                         {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x15', 'class' => 'form-control', 'placeholder' => 'If you login on this site, you can use function of create and save templates!', required]) !!}

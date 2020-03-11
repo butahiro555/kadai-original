@@ -176,7 +176,11 @@ return [
         // Create_template\Providers\BroadcastServiceProvider::class,
         Create_template\Providers\EventServiceProvider::class,
         Create_template\Providers\RouteServiceProvider::class,
-
+        
+        /*
+        * 追加
+        */
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
     ],
 
     /*

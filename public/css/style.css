@@ -5,10 +5,18 @@ body {
     overflow-y: scroll;
 }
 
+.top {
+margin-top: 68px;
+}
+
 .title {
 width: 30%;
-margin: auto;
+margin-left : 10%;
 margin-bottom: 20px;
+}
+
+.dropdown-sort {
+text-align: right;
 }
 
 .textarea {

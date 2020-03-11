@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Create Template</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
@@ -57,5 +58,6 @@
                 }
             });
         </script>
+        
     </body>
 </html>

@@ -55,7 +55,7 @@ class TemplatesController extends Controller
         $id = Auth::id();
         $user = User::find($id);
         
-        $templates = $user->templates()->orderBy('created_at', 'desc')->paginate(3);
+        $templates = $user->templates()->sortable()->paginate(10);
         
         $data = [
             'user' => $user,
