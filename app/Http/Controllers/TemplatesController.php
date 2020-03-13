@@ -1,11 +1,11 @@
 <?php
 
-namespace Create_template\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Create_template\User;
-use Create_template\Template;
+use App\User;
+use App\Template;
 use Auth;
 
 class TemplatesController extends Controller

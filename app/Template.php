@@ -1,6 +1,6 @@
 <?php
 
-namespace Create_template;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Kyslik\ColumnSortable\Sortable; // 追加
