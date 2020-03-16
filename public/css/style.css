@@ -9,6 +9,16 @@ body {
 margin-top: 68px;
 }
 
+.above {
+display: flex;
+justify-content:flex-end;
+}
+
+.above-serach {
+clear: both;
+display: inline-block;
+}
+
 .title {
 width: 30%;
 margin-left : 10%;

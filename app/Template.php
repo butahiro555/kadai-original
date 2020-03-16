@@ -18,4 +18,5 @@ class Template extends Model
     
     
     public $sortable = ['created_at', 'updated_at']; // ソート対象カラム追加
+    
 }

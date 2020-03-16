@@ -9,7 +9,8 @@ use App\Template;
 use Auth;
 
 class TemplatesController extends Controller
-{
+{   
+    // トップページ
     public function index()
     {   
         $user = Auth::user();
@@ -19,6 +20,7 @@ class TemplatesController extends Controller
             ]);
     }
     
+    // 作成機能
     public function store(Request $request)
     {   
         
@@ -50,10 +52,14 @@ class TemplatesController extends Controller
         
     }
     
+    // ユーザーの一覧表示
     public function show($id)
     {   
         $id = Auth::id();
         $user = User::find($id);
+        
+        // 他のユーザーの一覧は見れないようにする
+        if($user->id === Auth::id()){
         
         $templates = $user->templates()->sortable()->paginate(10);
         
@@ -62,18 +68,32 @@ class TemplatesController extends Controller
             'templates' => $templates,
         ];
         
-        // 他のユーザーの一覧は見れないようにする
-        if($user->id == Auth::id()){
-            
         return view('templates.show', $data);
         
-        }else {
-        
-        return redirect('/');
+        }else{
+            
+        return view('templates.index');
         }
         
     }
     
+    // 検索機能
+    public function search(Request $request)
+    {   
+        $user = Auth::user();
+        
+        // ログインユーザーのテンプレートのみ取得する($query = Template::query()だと、他のユーザーのテンプレートまで引っ張ってきてしまう)
+        $template = $user->templates();
+        
+        // 検索ワードと同じtitleをとってくる
+        $templates = $template->where('title', '=', $request->keyword)->sortable()->paginate(10);
+        
+        return view('templates.show', [
+            'templates' => $templates
+            ]);
+    }
+    
+    // 削除機能
     public function destroy($id)
     {
         $templates = Template::find($id);
