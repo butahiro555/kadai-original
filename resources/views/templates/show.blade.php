@@ -3,23 +3,22 @@
 @section('content')
     @if(count($templates) > 0)
         <h5 class="text-center text-danger">Template list</h5>
-    <div class="above">
-        <div class="above-serach">
-            {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
-                {!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search title.', required]) !!}
-                {!! Form::submit('Search', ['class' => 'btn btn-success text-white']) !!}
-            {!! Form::close() !!}
-        </div>
         
-        <div class="above-sort">
-            <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                <li><button class="dropdown-item" type="button">@sortablelink('created_at', 'create_date')</li>
-                <div class="dropdown-divider"></div>
-                <li><button class="dropdown-item" type="button">@sortablelink('updated_at', 'update_date')</li>
-            </ul>
-        </div>
-    </div>
+            <table class="search">
+                {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
+                <td class="example1">{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.', required]) !!}</td>
+                <td>{!! Form::button('<i class="fas fa-search"></i>', ['type' => 'submit', 'class' => 'btn btn-success text-white']) !!}</td>
+                {!! Form::close() !!}
+            </table>
+            
+            <div class="sort">
+                <button type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <li><button class="dropdown-item" type="button">@sortablelink('created_at', 'create_date')</li>
+                    <li class="dropdown-divider"></li>
+                    <li><button class="dropdown-item" type="button">@sortablelink('updated_at', 'update_date')</li>
+                </ul>
+            </div>
         
         <!-- テンプレートを繰り返し表示する -->
         @foreach ($templates as $template)

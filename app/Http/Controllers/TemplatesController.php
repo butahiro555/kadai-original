@@ -15,15 +15,13 @@ class TemplatesController extends Controller
     {   
         $user = Auth::user();
         
-        return view('templates.index', [
-            'user' => $user,
-            ]);
+        return view('templates.index', ['user' => $user]);
     }
     
     // 作成機能
     public function store(Request $request)
     {   
-        
+        $user = Auth::user();
         $templates = new Template;
         
         // $テーブル名->カラム名 = $request->name="入力したい値"
@@ -33,11 +31,8 @@ class TemplatesController extends Controller
         $templates->content = $request->content;
         $templates->save();
         
-        $id = Auth::id();
-        
-        // Saveが押されたら、Template listsに遷移させる
-        return redirect()->route('templates.show', ['id' => $id]);
-        
+        // Saveが押されたら、Template listに遷移させる
+        return redirect()->route('templates.show', ['id' => $user->id]);
     }
     
     // 上書き保存機能
@@ -49,32 +44,20 @@ class TemplatesController extends Controller
         $templates->save();
         
         return redirect()->route('templates.show', ['id' => $id]);
-        
     }
     
     // ユーザーの一覧表示
     public function show($id)
     {   
-        $id = Auth::id();
-        $user = User::find($id);
+        $user = Auth::user();
         
         // 他のユーザーの一覧は見れないようにする
-        if($user->id === Auth::id()){
-        
+        if($user->id == Auth::id()) {
+            
         $templates = $user->templates()->sortable()->paginate(10);
         
-        $data = [
-            'user' => $user,
-            'templates' => $templates,
-        ];
-        
-        return view('templates.show', $data);
-        
-        }else{
-            
-        return view('templates.index');
+        return view('templates.show', ['templates' => $templates]);
         }
-        
     }
     
     // 検索機能
@@ -88,9 +71,7 @@ class TemplatesController extends Controller
         // 検索ワードと同じtitleをとってくる
         $templates = $template->where('title', '=', $request->keyword)->sortable()->paginate(10);
         
-        return view('templates.show', [
-            'templates' => $templates
-            ]);
+        return view('templates.show', ['templates' => $templates]);
     }
     
     // 削除機能

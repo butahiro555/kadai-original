@@ -2,31 +2,27 @@
 
 /* スクロールバーの有無で画面のガタつきを防ぐためのCSS */
 body {
-    overflow-y: scroll;
+overflow-y: scroll;
+}
+
+table {
+display: flex;
+justify-content: center;
 }
 
 .top {
-margin-top: 68px;
+margin-top: 56px;
 }
 
-.above {
+.sort {
 display: flex;
-justify-content:flex-end;
-}
-
-.above-serach {
-clear: both;
-display: inline-block;
+justify-content: flex-end;
 }
 
 .title {
-width: 30%;
+width: 50%;
 margin-left : 10%;
 margin-bottom: 20px;
-}
-
-.dropdown-sort {
-text-align: right;
 }
 
 .textarea {

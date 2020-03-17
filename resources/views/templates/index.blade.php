@@ -2,6 +2,15 @@
 
 @section('content')
     <h5 class="text-center text-primary">Template create</h5>
+            @if(Auth::check())
+            <table class="search">
+                {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
+                <td class="example1">{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.', required]) !!}</td>
+                <td>{!! Form::button('<i class="fas fa-search"></i>', ['type' => 'submit', 'class' => 'btn btn-success text-white']) !!}</td>
+                {!! Form::close() !!}
+            </table>
+            @endif
+            
             <!-- テンプレートを保存するためのフォームアクション -->
             {!! Form::model($templatess, ['route' => 'templates.store']) !!}
                 {{ csrf_field() }}
