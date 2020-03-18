@@ -6,7 +6,7 @@
         
             <table class="search">
                 {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
-                <td class="example1">{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.', required]) !!}</td>
+                <td>{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.', required]) !!}</td>
                 <td>{!! Form::button('<i class="fas fa-search"></i>', ['type' => 'submit', 'class' => 'btn btn-success text-white']) !!}</td>
                 {!! Form::close() !!}
             </table>
@@ -19,6 +19,7 @@
                     <li><button class="dropdown-item" type="button">@sortablelink('updated_at', 'update_date')</li>
                 </ul>
             </div>
+            
         
         <!-- テンプレートを繰り返し表示する -->
         @foreach ($templates as $template)
@@ -33,7 +34,7 @@
                     </div>
                     
                     <div class="textarea">
-                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x15', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x13', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
                     </div>
                         
                 <!-- 3つのボタンのためのflex box -->        

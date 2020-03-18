@@ -5,13 +5,14 @@ body {
 overflow-y: scroll;
 }
 
-table {
-display: flex;
-justify-content: center;
+.top {
+margin-top: 76px;
 }
 
-.top {
-margin-top: 56px;
+.search {
+display: flex;
+justify-content: flex-end;
+margin-bottom: 20px;
 }
 
 .sort {

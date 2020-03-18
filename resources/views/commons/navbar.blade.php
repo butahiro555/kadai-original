@@ -1,7 +1,12 @@
 <header class="mb-2">
     
-    <nav class="navbar navbar-expand navbar-dark bg-dark"> 
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark"> 
         <a class="navbar-brand" href="/">Create&nbsp;Template...&nbsp;<i class="fas fa-pen"></i></a>
+        
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         
          
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
