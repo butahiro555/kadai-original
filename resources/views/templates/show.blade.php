@@ -6,7 +6,7 @@
         
             <table class="search">
                 {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
-                <td>{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.', required]) !!}</td>
+                <td>{!! Form::text('keyword', null, ['class' => 'form-control', 'placeholder' => 'Search Templates title.']) !!}</td>
                 <td>{!! Form::button('<i class="fas fa-search"></i>', ['type' => 'submit', 'class' => 'btn btn-success text-white']) !!}</td>
                 {!! Form::close() !!}
             </table>
@@ -30,11 +30,11 @@
                 <!-- テキストエリア -->
             <div class="container">
                     <div class="title">
-                        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title', required]) !!}
+                        {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Title']) !!}
                     </div>
                     
                     <div class="textarea">
-                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x13', 'class' => 'form-control', 'placeholder' => 'Type your text.', required]) !!}
+                        {!! Form::textarea('content', null, ['id' => 'copyTarget', 'type' => 'text', 'size' => '30x13', 'class' => 'form-control', 'placeholder' => 'Type your text.']) !!}
                     </div>
                         
                 <!-- 3つのボタンのためのflex box -->        

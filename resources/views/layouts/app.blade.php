@@ -12,7 +12,7 @@
         @include('commons.navbar')
         
         <div class="container">
-            @include('commons.error_tasks')
+            @include('commons.error_templates')
             
             @yield('content')
         </div>
