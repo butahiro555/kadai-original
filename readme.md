@@ -27,7 +27,9 @@ In addition, by making the text field easy to understand and the specification o
 
 <h3>Requirement</h3>
 - PHP 7.2.24
+<br>
 - Laravel framework 5.5
+<br>
 - AWS Cloud9
 
 <h3>Installation</h3>
@@ -59,13 +61,19 @@ Finally, open the application by clicking "Preview Running Application" in the "
 最後に、メニューバー上部にある「Previewボタン」の「Preview Running Application」をクリックして、アプリケーションを開いてください。
 <br>
 <a href="https://gyazo.com/6e30cae6aae1d6a536835d0b1c3bfac8"><img src="https://i.gyazo.com/6e30cae6aae1d6a536835d0b1c3bfac8.png" alt="Image from Gyazo" width="288"/></a>
-<h3>Note</h3>
-I don't test environments under Linux and Mac.
-<br>
-<br>
-Linux、Macの環境下では、テストを実施していません。
 
-<h3>Heroku</h3>
+<h3>Used Composer Package</h3>
+This application uses the following packages.
+<br>
+<br>
+本アプリケーションは、以下のパッケージを使用しています。
+<br>
+<br>
+- <a href="https://laravelcollective.com/docs/5.5/html">LaravelCollevtive v5.5</a>
+<br>
+- <a href="https://github.com/Kyslik/column-sortable/tree/L5.5">Column sorting for Laravel 5.5</a>
+
+<h3>Deployment</h3>
 This application is deployed on Heroku.
 <br>
 <br>
@@ -73,6 +81,12 @@ Herokuに本アプリケーションをデプロイしています。
 <br>
 <br>
 http://tomo-original-service.herokuapp.com/
+
+<h3>Note</h3>
+I don't test environments under Linux and Mac.
+<br>
+<br>
+Linux、Macの環境下では、テストを実施していません。
 
 <h3>Licence</h3>
 "Laravel framework" is open source software licensed under <a href="https://en.wikipedia.org/wiki/MIT_License">the MIT license</a>.
