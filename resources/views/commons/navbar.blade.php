@@ -1,7 +1,7 @@
 <header class="mb-2">
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark"> 
-        <a class="navbar-brand" href="/">Create&nbsp;Template...&nbsp;<i class="fas fa-pen"></i></a>
+        <a class="navbar-brand" href="/">Template&nbsp;Creator...&nbsp;<i class="fas fa-pen"></i></a>
         
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
