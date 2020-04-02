@@ -15,7 +15,10 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li class="text-center dropdown-item">{!! link_to_route('templates.show', 'Template list', ['id' => Auth::id()]) !!}</li>
+                            <!-- link_to_routeの第1引数はviewファイルのname、第2引数は表示する文字列、第3引数は配列[]の中に渡したい変数を定義できる -->
+                            <li class="text-center dropdown-item">{!! link_to_route('users.index', 'Profile') !!}</li>
+                            <li class="dropdown-divider"></li>
+                            <li class="text-center dropdown-item">{!! link_to_route('templates.show', 'Template list') !!}</li>
                             <li class="dropdown-divider"></li>
                             <li class="text-center dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
                         </ul>

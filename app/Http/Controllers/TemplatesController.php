@@ -36,7 +36,7 @@ class TemplatesController extends Controller
         ]);
         
         // Saveボタンが押されたら、Template listに遷移させる
-        return redirect()->route('templates.show', ['id' => $user->id]);
+        return redirect()->route('templates.show');
     }
     
     // 上書き保存機能
@@ -57,11 +57,11 @@ class TemplatesController extends Controller
         $templates->content = $request->content;
         $templates->save();
         
-        return redirect()->route('templates.show', ['id' => $user->id]);
+        return redirect()->route('templates.show');
     }
     
     // テンプレートの一覧表示ページ
-    public function show($id)
+    public function show()
     {   
         $user = Auth::user();
         
@@ -94,6 +94,6 @@ class TemplatesController extends Controller
         $templates = Template::find($id);
         $templates->delete();
         
-        return back();
+        return redirect()->route('templates.show');
     }
 }

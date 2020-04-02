@@ -15,6 +15,18 @@ justify-content: flex-end;
 margin-bottom: 20px;
 }
 
+.user {
+display: flex;
+justify-content: space-around;
+margin-top: 5%;
+}
+
+.edit {
+display: flex;
+justify-content: space-around;
+margin-top: 5%;
+}
+
 .sort {
 display: flex;
 justify-content: flex-end;
