@@ -73,15 +73,6 @@ This application uses the following packages.
 <br>
 - <a href="https://github.com/Kyslik/column-sortable/tree/L5.5">Column sorting for Laravel 5.5</a>
 
-<h3>Deployment</h3>
-This application is deployed on Heroku.
-<br>
-<br>
-Herokuに本アプリケーションをデプロイしています。
-<br>
-<br>
-http://tomo-original-service.herokuapp.com/
-
 <h3>Note</h3>
 I don't test environments under Linux and Mac.
 <br>
